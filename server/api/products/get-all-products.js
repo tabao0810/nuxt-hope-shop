@@ -1,4 +1,4 @@
 export default defineEventHandler(async () => {
-  const products = await $fetch("https://hope-shope.glitch.me/api/product/get");
+  const products = await $fetch(`${process.env.BASE_URL}/api/product/get`);
   return products;
 });

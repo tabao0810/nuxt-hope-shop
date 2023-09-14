@@ -12,7 +12,7 @@ $color-primary: #ff343b;
 }
 
 @mixin tablet {
-  @media (min-width: #{$mobile}) and (max-width: #{$tablet}) {
+  @media (min-width: #{$mobile}) and (max-width: #{$desktop}) {
     @content;
   }
 }
@@ -32,9 +32,41 @@ body {
   text-align: center;
   color: #2c3e50;
   overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(230, 230, 230);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
 }
 li {
   list-style: none;
+}
+a{
+  text-decoration: none;
+}
+// Banner
+.swiper-banner {
+  @include mobile {
+    height: 25vh !important;
+  }
+  @include tablet {
+    height: 35vh !important;
+  }
+}
+// Sales
+.list_sales{
+  @include tablet{
+    &:last-child{
+      display: none;
+    }
+  }
 }
 
 // Product Item
@@ -194,6 +226,7 @@ li {
 
 // Footer
 .newLetter__heading {
+  padding-top: 12px;
   text-align: center;
 
   h1 {
@@ -242,7 +275,7 @@ li {
     text-align: center;
   }
   @include tablet {
-    text-align: left;
+    text-align: center;
   }
   &::after {
     content: "";
@@ -278,6 +311,7 @@ li {
       text-decoration: none;
       font-size: 14px;
       transition: all 0.3s linear;
+      color: white;
       &:hover {
         color: $color-primary;
       }

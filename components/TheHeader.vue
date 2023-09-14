@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const logo = ref<string | any>(process.env.LOGO_IMG);
-console.log("re-render header");
 </script>
 
 <template>

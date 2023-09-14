@@ -1,6 +1,6 @@
 <template>
-  <footer class="mt-5 bg-[#6c757d] text-white">
-    <div class="mx-auto container">
+  <footer class="bg-[#6c757d] text-white">
+    <div class="container">
       <div class="newLetter__heading">
         <h1>Newsletter</h1>
         <p>Get the latest new and special offers</p>
@@ -23,8 +23,8 @@
       </div> -->
       <div class="border-y py-2 px-5">
         <div class="">
-          <div class="container grid md:grid-cols-4 grid-cols-1">
-            <div class="cols-3 sm:cols-12 letter-text">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-12 letter-text">
               <h2 class="letter__header">MY ACCOUNT</h2>
               <div class="list-letter">
                 <li><a href="">My Account</a></li>
@@ -34,7 +34,7 @@
                 <li><a href="">My Wishlist</a></li>
               </div>
             </div>
-            <div class="cols-3 sm:cols-12 letter-text">
+            <div class="col-lg-3 col-md-6 col-12 letter-text">
               <h2 class="letter__header">INFORMATION</h2>
               <div class="list-letter">
                 <li><a href="">My Account</a></li>
@@ -44,7 +44,7 @@
                 <li><a href="">Login</a></li>
               </div>
             </div>
-            <div class="cols-3 sm:cols-12 letter-text">
+            <div class="col-lg-3 col-md-6 col-12 letter-text">
               <h2 class="letter__header">CUSTOMER SERVICE</h2>
               <div class="list-letter">
                 <li><a href="">My Account</a></li>
@@ -54,7 +54,7 @@
                 <li><a href="">My Login</a></li>
               </div>
             </div>
-            <div class="cols-3 sm:cols-12 letter-text">
+            <div class="col-lg-3 col-md-6 col-12 letter-text">
               <h2 class="letter__header">STORE INFORMATION</h2>
               <div class="list-letter-2 mt-3">
                 <p>Địa chỉ: Minh Hòa, Hưng Hà, Thái Bình</p>
@@ -65,14 +65,17 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-between p-3">
-        <p>
+      <div class="d-flex justify-content-between align-items-center p-2">
+        <p class="text-center">
           Copyright <a href="" class="text-danger">©Tạ Quốc Bảo</a>.All Rights
           Reserved
         </p>
-        <!-- <div class="icon">
-          <img v-for="img in listImg" :key="img.id" :src="img.image" alt="" />
-        </div> -->
+        <div class="">
+          <img
+            src="https://hope-2.myshopify.com/cdn/shop/t/2/assets/payment.png?v=113921376602854557521464179948"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </footer>
