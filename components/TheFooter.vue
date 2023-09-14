@@ -65,8 +65,10 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between align-items-center p-2">
-        <p class="text-center">
+      <div
+        class="d-flex justify-content-between align-items-center p-2 flex flex-column-reverse flex-md-row"
+      >
+        <p class="text-center mt-2">
           Copyright <a href="" class="text-danger">©Tạ Quốc Bảo</a>.All Rights
           Reserved
         </p>

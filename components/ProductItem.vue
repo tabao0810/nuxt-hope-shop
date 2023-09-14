@@ -17,12 +17,24 @@ const props = defineProps({
         <NuxtLink to="/">{{ productDetail.name }}</NuxtLink>
       </h2>
       <p>
-        <span class="product_price">
-          {{ productDetail.price }}
+        <span v-if="productDetail.isSale">
+          <span class="product_price">
+            {{
+              FormatPrice(
+                Number(
+                  productDetail.price -
+                    (productDetail.price * productDetail.sale) / 100
+                )
+              )
+            }}
+          </span>
+          <span class="product_price_sale">
+            {{ FormatPrice(productDetail.price) }}</span
+          >
         </span>
-        <span class="product_price_sale" v-if="productDetail.isSale">
-          {{ productDetail.price }}</span
-        >
+        <span class="product_price" v-else>
+          {{ FormatPrice(productDetail.price) }}
+        </span>
       </p>
     </div>
     <div class="product_feature">

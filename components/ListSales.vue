@@ -9,7 +9,7 @@
           <div class="sale_banner">
             <NuxtLink to="/">
               <img
-                src="https://hope-2.myshopify.com/cdn/shop/t/2/assets/h-banner-3.jpg?v=108604939206400285381464179944"
+                src="https://hope-2.myshopify.com/cdn/shop/t/2/assets/h-banner-1.jpg?v=132282272900468410731464179944"
                 alt=""
               />
             </NuxtLink>
@@ -25,7 +25,7 @@
           <div class="sale_banner">
             <NuxtLink to="/">
               <img
-                src="https://hope-2.myshopify.com/cdn/shop/t/2/assets/h-banner-3.jpg?v=108604939206400285381464179944"
+                src="https://hope-2.myshopify.com/cdn/shop/t/2/assets/h-banner-2.jpg?v=21612175103469506241464179944"
                 alt=""
               />
             </NuxtLink>

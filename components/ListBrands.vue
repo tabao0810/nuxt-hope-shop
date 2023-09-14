@@ -3,12 +3,12 @@ const { data: brands, pending } = await useFetch("/api/brands/get-all-brands");
 </script>
 
 <template>
-  <div v-if="!pending">
+  <div v-if="!pending" class="position-relative">
     <Swiper
       :class="'swiper-brands'"
       :modules="[SwiperEffectCreative, SwiperNavigation]"
       :slides-per-view="4"
-      :slides-per-group="1"
+      :centered-slides="true"
       :loop="true"
       :effect="'creative'"
       :navigation="{
@@ -26,13 +26,14 @@ const { data: brands, pending } = await useFetch("/api/brands/get-all-brands");
       }"
     >
       <SwiperSlide v-for="brand in brands.Brand" :key="brand._id">
-        <img :src="brand.image" alt="" lazy="loading" />
+        <div class="single_brand">
+          <img :src="brand.image" alt="" lazy="loading" />
+        </div>
       </SwiperSlide>
       <div class="brand-navgation">
         <button class="brand-button-prev">
           <span class="brand-icon-left">p</span>
         </button>
-
         <button class="brand-button-next">
           <span class="brand-icon-right">n</span>
         </button>
@@ -52,19 +53,19 @@ const { data: brands, pending } = await useFetch("/api/brands/get-all-brands");
 .swiper-brands {
   width: 100%;
   height: 100%;
-  position: relative;
   &:hover {
     .brand-navgation {
       display: flex;
       justify-content: space-between;
     }
   }
-
-  img {
-    display: block;
+  .single_brand {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .brand-navgation {

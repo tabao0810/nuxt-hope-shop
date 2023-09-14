@@ -12,4 +12,15 @@ export default defineNuxtConfig({
     styleLang: "scss",
     modules: ["navigation", "pagination", "autoplay", "effect-creative"],
   },
+  app: {
+    head: {
+      title: "Hope-shop",
+      meta: [
+        {
+          name: "description",
+          content: "Trang web bán hàng thời trang",
+        },
+      ],
+    },
+  },
 });
