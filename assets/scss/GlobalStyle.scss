@@ -318,3 +318,11 @@ a{
     }
   }
 }
+// page 404
+.hastech-404-area-list{
+  h2{
+    @include mobile {
+        font-size: 50px;
+      }
+  }
+}
