@@ -1,13 +1,28 @@
 <script setup>
 const props = defineProps({
   productDetail: Object,
+  Loading: Boolean,
 });
+import { typePackages } from "@/constants/type-product";
 </script>
 
 <template>
   <div class="single_product">
-    <NuxtLink to="/" class="product_overlay">
-      <img class="" :src="productDetail.image" alt="" loading="lazy" />
+    <NuxtLink
+      :to="`products/${typePackages[productDetail.typeProduct]}/${
+        productDetail._id
+      }`"
+      class="product_overlay"
+    >
+      <img
+        class=""
+        :src="productDetail.image"
+        alt=""
+        loading="lazy"
+        @load="Loading = false"
+        v-show="!Loading"
+      />
+      <LoadingImageSkeleton v-if="Loading" style="min-height: 300px" />
     </NuxtLink>
     <div class="sale_product" v-if="productDetail.isSale">
       <h5>Sale</h5>
