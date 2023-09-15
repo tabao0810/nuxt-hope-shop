@@ -143,6 +143,10 @@ a{
     text-align: center;
     visibility: visible;
     transition: all linear 0.3s;
+    -webkit-transform: translate(0px, -20px);
+      -ms-transform: translate(0px, -20px);
+      -o-transform: translate(0px, -20px);
+      transform: translate(0px, -20px);
     h2 {
       font-weight: bold;
       font-size: 18px;
@@ -216,10 +220,10 @@ a{
     .product_feature {
       opacity: 1;
       visibility: visible;
-      -webkit-transform: translate(0px, -60px);
-      -ms-transform: translate(0px, -60px);
-      -o-transform: translate(0px, -60px);
-      transform: translate(0px, -60px);
+      -webkit-transform: translate(0px, 36px);
+      -ms-transform: translate(0px, 36px);
+      -o-transform: translate(0px, 36px);
+      transform: translate(0px, 36px);
     }
     cursor: pointer;
   }

@@ -23,14 +23,15 @@ useHead({
       <div class="col-lg-9 col-12">
         <div v-for="blog in blogs.Blog" :key="blog._id" class="single-blog">
           <NuxtLink :to="`/blogs/${blog._id}`">
+            <LoadingImageSkeleton v-if="pending" style="min-height: 350px" />
             <img
               :src="blog.image"
               alt=""
               loading="lazy"
-              @load="pending == false"
+              @load="pending = false"
               v-show="!pending"
+              v-else
             />
-            <LoadingImageSkeleton v-if="pending" style="min-height: 350px" />
           </NuxtLink>
 
           <div class="blog-router-detail">

@@ -9,11 +9,12 @@ import { typePackages } from "@/constants/type-product";
 <template>
   <div class="single_product">
     <NuxtLink
-      :to="`products/${typePackages[productDetail.typeProduct]}/${
+      :to="`/products/${typePackages[productDetail.typeProduct]}/${
         productDetail._id
       }`"
       class="product_overlay"
     >
+      <LoadingImageSkeleton v-if="Loading" style="min-height: 300px" />
       <img
         class=""
         :src="productDetail.image"
@@ -21,11 +22,19 @@ import { typePackages } from "@/constants/type-product";
         loading="lazy"
         @load="Loading = false"
         v-show="!Loading"
+        v-else
       />
-      <LoadingImageSkeleton v-if="Loading" style="min-height: 300px" />
     </NuxtLink>
     <div class="sale_product" v-if="productDetail.isSale">
       <h5>Sale</h5>
+    </div>
+    <div class="product_feature">
+      <div class="product_feature-detail">
+        <button>Tym</button>
+      </div>
+      <div class="product_feature-detail">
+        <button>ADD TO CART</button>
+      </div>
     </div>
     <div class="product_detail">
       <h2>
@@ -51,14 +60,6 @@ import { typePackages } from "@/constants/type-product";
           {{ FormatPrice(productDetail.price) }}
         </span>
       </p>
-    </div>
-    <div class="product_feature">
-      <div class="product_feature-detail">
-        <button>Tym</button>
-      </div>
-      <div class="product_feature-detail">
-        <button>ADD TO CART</button>
-      </div>
     </div>
   </div>
 </template>
