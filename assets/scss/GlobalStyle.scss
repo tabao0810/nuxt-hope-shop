@@ -72,7 +72,7 @@ a{
 
 // Product Item
 .single_product {
-  min-height: 400px;
+  min-height: 300px;
   position: relative;
   @include mobile {
     margin-bottom: 0px;
@@ -329,5 +329,96 @@ a{
     @include mobile {
         font-size: 50px;
       }
+  }
+}
+// sidebar
+.sidebar_product_feature{
+  @include mobile {
+      display: none;
+    }
+}
+.sidebar_products {
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+.extend_sidebar{
+  text-align: left;
+    @include desktop {
+        display: none;
+      }
+}
+.menu_extend_product {
+  @include desktop {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    display: flex;
+
+    @include mobile() {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      padding-bottom: 12px;
+    }
+
+    li {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      a {
+        padding: 8px;
+        color: #333;
+        width: 100%;
+        display: block;
+        text-align: center;
+
+        @include mobile() {
+          text-align: left;
+        }
+
+        &:hover {
+          background-color: #efefef;
+        }
+      }
+
+      .active {
+        color: $color-primary;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.add_r_sidebar {
+  margin-top: 16px;
+
+  .banner_block {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: default;
+  }
+
+  &:hover {
+    .banner_block {
+      cursor: pointer;
+      top: -10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition: all linear 0.3s;
+    }
   }
 }

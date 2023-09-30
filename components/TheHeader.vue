@@ -120,12 +120,14 @@ const logo = ref<string | any>(process.env.LOGO_IMG);
                     >
                   </li>
                   <li class="navbar-item">
-                    <NuxtLink to="/products" class="navbar-item-link"
+                    <NuxtLink to="/products/all" class="navbar-item-link"
                       ><span>Sản phẩm</span></NuxtLink
                     >
                   </li>
                   <li class="navbar-item">
-                    <NuxtLink to="/tutorial" class="navbar-item-link"
+                    <NuxtLink
+                      to="/tutorial/size_clothes"
+                      class="navbar-item-link"
                       ><span>Chọn size</span></NuxtLink
                     >
                   </li>
@@ -185,12 +187,12 @@ const logo = ref<string | any>(process.env.LOGO_IMG);
               >
             </li>
             <li class="navbar-item">
-              <NuxtLink to="/products" class="navbar-item-link"
+              <NuxtLink to="/products/all" class="navbar-item-link"
                 ><span>Sản phẩm</span></NuxtLink
               >
             </li>
             <li class="navbar-item">
-              <NuxtLink to="/tutorial" class="navbar-item-link"
+              <NuxtLink to="/tutorial/size_clothes" class="navbar-item-link"
                 ><span>Chọn size</span></NuxtLink
               >
             </li>

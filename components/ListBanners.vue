@@ -6,7 +6,7 @@ const { data: banners, pending } = await useFetch(
 
 <template>
   <Swiper
-    :class="'swiper-banner'"
+    class="swiper-banner"
     :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperNavigation]"
     :slides-per-view="1"
     :centered-slides="true"

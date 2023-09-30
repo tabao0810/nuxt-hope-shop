@@ -6,10 +6,10 @@ const FormatType = ref(
     Object.values(typePackages).findIndex((item) => item == route.params.type)
   ]
 );
-const { data: ProductDetail, pending: loadProduct } = await useFetch(
+const { data: ProductDetail, pending: loadProduct } = await useLazyFetch(
   `/api/products/${route.params.id}`
 );
-const { data: ProductRelated, pending: loading } = await useFetch(
+const { data: ProductRelated, pending: loading } = await useLazyFetch(
   `/api/products/type/${FormatType.value}`
 );
 </script>
@@ -160,13 +160,30 @@ const { data: ProductRelated, pending: loading } = await useFetch(
         </div>
       </div>
       <!-- Related -->
-      <div
-        v-for="product in ProductRelated"
-        :key="product._id"
-        class="col-lg-3 col-md-6 col-12 mt-4"
+
+      <Swiper
+        :modules="[SwiperNavigation, SwiperEffectCreative]"
+        :slides-per-view="4"
+        :spaceBetween="20"
+        :loop="true"
+        :effect="'creative'"
+        :navigation="true"
+        :creative-effect="{
+          prev: {
+            shadow: false,
+            translate: ['-20%', 0, -1],
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+        }"
       >
-        <ProductItem class="" :productDetail="product" :Loading="loading" />
-      </div>
+        <SwiperSlide v-for="product in ProductRelated" :key="product._id">
+          <div>
+            <ProductItem class="" :productDetail="product" :Loading="loading" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   </div>
 </template>
@@ -250,44 +267,44 @@ $colors: (
     margin-left: 10px;
   }
 }
-.pickColor {
-  display: none;
-  &:checked + label {
-    span {
-      transform: scale(1.25);
-    }
-    @each $name, $value in $colors {
-      .#{$name} {
-        border: 2px solid darken($value, 100%);
-      }
-    }
-  }
-}
+// .pickColor {
+//   display: none;
+//   &:checked + label {
+//     span {
+//       transform: scale(1.25);
+//     }
+//     @each $name, $value in $colors {
+//       .#{$name} {
+//         border: 2px solid darken($value, 100%);
+//       }
+//     }
+//   }
+// }
 
-.pickColorLabel {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  cursor: pointer;
-  &:hover {
-    span {
-      transform: scale(1.25);
-    }
-  }
-  span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transition: transform 0.2s ease-in-out;
-    @each $name, $value in $colors {
-      &.#{$name} {
-        background: $value;
-      }
-    }
-  }
-}
+// .pickColorLabel {
+//   display: inline-block;
+//   width: 30px;
+//   height: 30px;
+//   margin-right: 10px;
+//   cursor: pointer;
+//   &:hover {
+//     span {
+//       transform: scale(1.25);
+//     }
+//   }
+//   span {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 50%;
+//     transition: transform 0.2s ease-in-out;
+//     @each $name, $value in $colors {
+//       &.#{$name} {
+//         background: $value;
+//       }
+//     }
+//   }
+// }
 // Pick size
 .selectSize {
   display: flex;
@@ -362,4 +379,7 @@ $colors: (
   margin: 10px 0px;
   white-space: pre-line;
 }
+// .swiper-related-product {
+//   height: 400px;
+// }
 </style>

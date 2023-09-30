@@ -14,7 +14,7 @@ import { typePackages } from "@/constants/type-product";
       }`"
       class="product_overlay"
     >
-      <LoadingImageSkeleton v-if="Loading" style="min-height: 300px" />
+      <LoadingImageSkeleton v-if="Loading" style="min-height: 250px" />
       <img
         class=""
         :src="productDetail.image"
@@ -25,7 +25,7 @@ import { typePackages } from "@/constants/type-product";
         v-else
       />
     </NuxtLink>
-    <div class="sale_product" v-if="productDetail.isSale">
+    <div class="sale_product" v-if="productDetail.isSale" v-show="!Loading">
       <h5>Sale</h5>
     </div>
     <div class="product_feature">
@@ -36,30 +36,33 @@ import { typePackages } from "@/constants/type-product";
         <button>ADD TO CART</button>
       </div>
     </div>
-    <div class="product_detail">
-      <h2>
-        <NuxtLink to="/">{{ productDetail.name }}</NuxtLink>
-      </h2>
-      <p>
-        <span v-if="productDetail.isSale">
-          <span class="product_price">
-            {{
-              FormatPrice(
-                Number(
-                  productDetail.price -
-                    (productDetail.price * productDetail.sale) / 100
+    <div>
+      <LoadingImageSkeleton v-if="Loading" style="min-height: 50px" />
+      <div v-else class="product_detail">
+        <h2>
+          <NuxtLink to="/">{{ productDetail.name }}</NuxtLink>
+        </h2>
+        <p>
+          <span v-if="productDetail.isSale">
+            <span class="product_price">
+              {{
+                FormatPrice(
+                  Number(
+                    productDetail.price -
+                      (productDetail.price * productDetail.sale) / 100
+                  )
                 )
-              )
-            }}
+              }}
+            </span>
+            <span class="product_price_sale">
+              {{ FormatPrice(productDetail.price) }}</span
+            >
           </span>
-          <span class="product_price_sale">
-            {{ FormatPrice(productDetail.price) }}</span
-          >
-        </span>
-        <span class="product_price" v-else>
-          {{ FormatPrice(productDetail.price) }}
-        </span>
-      </p>
+          <span class="product_price" v-else>
+            {{ FormatPrice(productDetail.price) }}
+          </span>
+        </p>
+      </div>
     </div>
   </div>
 </template>

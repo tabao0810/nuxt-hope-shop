@@ -88,23 +88,4 @@
     }
   }
 }
-.add_r_sidebar {
-  margin-top: 16px;
-
-  .banner_block {
-    position: relative;
-    top: 0;
-    left: 0;
-    cursor: default;
-  }
-  &:hover {
-    .banner_block {
-      cursor: pointer;
-      top: -10px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      transition: all linear 0.3s;
-    }
-  }
-}
 </style>

@@ -89,15 +89,15 @@ useHead({
   text-transform: uppercase;
   text-align: left;
   position: relative;
-  padding: 20px 0 5px;
+  padding: 12px 0 5px;
   font-size: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
   &::before {
     content: "";
     position: absolute;
     height: 10px;
     border-bottom: 0.5px solid #ccc;
-    top: 32px;
+    top: 20px;
     width: 100%;
   }
   .blog__icon-text {
@@ -117,7 +117,7 @@ useHead({
       content: "";
       position: absolute;
       height: 10px;
-      top: 22px;
+      top: 14px;
       border-left: 1px solid #ff343b;
       left: 46px;
     }

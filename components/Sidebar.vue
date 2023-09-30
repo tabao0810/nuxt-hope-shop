@@ -1,0 +1,87 @@
+<script setup>
+const props = defineProps({
+  routes: {
+    type: Array,
+    required: true,
+  },
+  images: {
+    type: Array,
+  },
+  title: {
+    type: String,
+  },
+});
+</script>
+
+<template>
+  <div class="catagory_all_products sidebar_products">
+    <div class="catagory_area">
+      <h2>{{ props.title }}</h2>
+      <ul class="catagory_area-menu">
+        <li v-for="(item, index) in props.routes" :key="index">
+          <NuxtLink :to="item.to">{{ item.route }}</NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar_product_feature">
+    <div
+      class="add_r_sidebar"
+      v-for="(_img, index) in props.images"
+      :key="index"
+    >
+      <NuxtLink to="/" class="banner_block">
+        <img :src="_img.image" alt="" />
+      </NuxtLink>
+    </div>
+  </div>
+</template>
+<style lang="scss">
+.catagory_all_products {
+  background: #f3f3f3;
+  padding: 20px;
+  h2 {
+    font-size: 18px;
+    color: rgba(34, 34, 34, 0.8);
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c2c2c2;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+.catagory_area-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    color: #666;
+    padding: 6px 0px;
+    text-align: left;
+    a {
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #666;
+      text-decoration: none;
+      position: relative;
+      transition: all linear 0.3s;
+      span {
+        padding: 0px 4px;
+      }
+      &:hover {
+        color: red;
+        left: 16px;
+        font-weight: 600;
+        transition: all linear 0.3s;
+      }
+    }
+    .router-link-active {
+      color: red;
+      left: 16px;
+      font-weight: 600;
+      transition: all linear 0.3s;
+    }
+  }
+}
+</style>
