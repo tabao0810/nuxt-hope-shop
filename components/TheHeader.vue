@@ -151,7 +151,7 @@ const logo = ref<string | any>(process.env.LOGO_IMG);
                     placeholder="Search our store"
                   />
                   <button class="navbar-icon">
-                    <i class="fa fa-search"></i>
+                    <IconsSearch />
                   </button>
                 </div>
               </div>

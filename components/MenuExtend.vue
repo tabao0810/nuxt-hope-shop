@@ -22,16 +22,14 @@ watch(route, () => {
         @click.prevent="showMenuProduct = !showMenuProduct"
         v-if="!showMenuProduct"
       >
-        <i class="fas fa-bars"></i>
-        show
+        <IconsMenuBar />
       </button>
       <button
         class="icon_extend"
         @click.prevent="showMenuProduct = !showMenuProduct"
         v-else
       >
-        <i class="fas fa-times"></i>
-        hide
+        <IconsClose />
       </button>
     </div>
     <slot></slot>

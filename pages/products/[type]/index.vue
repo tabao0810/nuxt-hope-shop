@@ -59,7 +59,7 @@ const image_products = ref([
           <div
             v-for="product in ListProducts"
             :key="product._id"
-            class="col-lg-3 col-md-6 col-12"
+            class="col-lg-4 col-md-6 col-12"
           >
             <ProductItem :productDetail="product" :Loading="pending" />
           </div>

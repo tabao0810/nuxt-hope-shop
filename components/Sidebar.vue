@@ -19,7 +19,10 @@ const props = defineProps({
       <h2>{{ props.title }}</h2>
       <ul class="catagory_area-menu">
         <li v-for="(item, index) in props.routes" :key="index">
-          <NuxtLink :to="item.to">{{ item.route }}</NuxtLink>
+          <NuxtLink :to="item.to"
+            ><span><IconsRight :wid="'1.4em'" :hei="'1.4em'" /></span
+            >{{ item.route }}</NuxtLink
+          >
         </li>
       </ul>
     </div>
@@ -48,40 +51,6 @@ const props = defineProps({
     text-transform: uppercase;
     font-weight: bold;
     text-align: left;
-  }
-}
-.catagory_area-menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    color: #666;
-    padding: 6px 0px;
-    text-align: left;
-    a {
-      font-weight: 500;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #666;
-      text-decoration: none;
-      position: relative;
-      transition: all linear 0.3s;
-      span {
-        padding: 0px 4px;
-      }
-      &:hover {
-        color: red;
-        left: 16px;
-        font-weight: 600;
-        transition: all linear 0.3s;
-      }
-    }
-    .router-link-active {
-      color: red;
-      left: 16px;
-      font-weight: 600;
-      transition: all linear 0.3s;
-    }
   }
 }
 </style>

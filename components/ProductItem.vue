@@ -30,7 +30,10 @@ import { typePackages } from "@/constants/type-product";
     </div>
     <div class="product_feature">
       <div class="product_feature-detail">
-        <button>Tym</button>
+        <button><IconsFavorite /></button>
+      </div>
+      <div class="product_feature-detail">
+        <button><IconsEye /></button>
       </div>
       <div class="product_feature-detail">
         <button>ADD TO CART</button>

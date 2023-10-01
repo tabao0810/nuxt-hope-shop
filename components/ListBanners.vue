@@ -35,11 +35,15 @@ const { data: banners, pending } = await useFetch(
     </SwiperSlide>
     <div class="banner-navgation">
       <button class="banner-button-prev">
-        <span class="banner-icon-left">p</span>
+        <span class="banner-icon-left"
+          ><IconsLeft :wid="'1em'" :hei="'1em'" :view="'8 4 18 14'"
+        /></span>
       </button>
 
       <button class="banner-button-next">
-        <span class="banner-icon-right">n</span>
+        <span class="banner-icon-right"
+          ><IconsRight :wid="'1em'" :hei="'1em'" :view="'0 2 12 20'"
+        /></span>
       </button>
     </div>
   </Swiper>

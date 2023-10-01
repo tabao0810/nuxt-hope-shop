@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     "bootstrap/dist/css/bootstrap.min.css",
     "~/assets/scss/GlobalStyle.scss",
   ],
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "nuxt-swiper"],
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "nuxt-swiper", "nuxt-icon"],
   swiper: {
     prefix: "Swiper",
     styleLang: "scss",
